@@ -2,11 +2,11 @@
 # so we installed chatterbot lib using this commands:
 
 # git clone https://github.com/feignbird/ChatterBot-spacy_fixed
-# pip install ./ChatterBot-spacy_fixed
-# pip install chatterbot-corpus
-# pip uninstall pyYAML
-# pip install pyYAML==5.3.1
-# python -m spacy download en_core_web_sm
+# pip3 install ./ChatterBot-spacy_fixed 　  pip3にしたらできた
+# pip3 install chatterbot-corpus　　　　　　　pip3にしたらできた
+# pip3 uninstall pyYAML　　　　　　　　　　　 　pip3にしたらできた
+# pip3 install pyYAML==5.3.1　　　　　　　　 　pip3にしたらできた
+# python -m spacy download en_core_web_sm　 pip3にしたらできた
 
 # ChatterBot-spacy_fixed - this is a fork of original chatterbot repo with
 # some minor fixes for spaCy library used in chatterbot library
@@ -18,7 +18,7 @@
 
 # 'python -m spacy download en_core_web_sm' command is used to download dataset for spacy that is used in chatterbot
 
-# chatterbot library documentation https://chatterbot.readthedocs.io/en/Fstable/index.html
+# chatterbot library documentation https://chatterbot.readthedocs.io/en/stable/index.html
 # possible dataset for future training https://www.kaggle.com/code/kagarg/chatbot/notebook
 # dataset used in UbuntuCorpusTrainer https://www.kaggle.com/datasets/rtatman/ubuntu-dialogue-corpus/versions/1
 
@@ -42,18 +42,18 @@ FLOW_EXIT_KEYWORDS = ("quit", "exit")
 chatbot = ChatBot(
     name=CHAT_BOT_NAME,
     logic_adapters=[
-        'chatterbot.logic.MathematicalEvaluation',  # allows for mathematical equations evaluation
-        'chatterbot.logic.BestMatch',  # selects answer to given question by most know match of all of dataset
-        'chatterbot.logic.TimeLogicAdapter'  # allows to identify statements about time
+        'chatterbot.logic.MathematicalEvaluation',  # により、数式の評価が可能です。
+        'chatterbot.logic.BestMatch',  # 与えられた質問に対する答えを、データセットの中で最もよく知っているものから選択する。
+        'chatterbot.logic.TimeLogicAdapter'  # は、時間に関する記述を識別することができます
     ],
-    storage_adapter='chatterbot.storage.SQLStorageAdapter',  # storage adapter in form of a single file database
-    database_uri='sqlite:///chatbot_data.sqlite3'  # uri of database required by storage adapter
+    storage_adapter='chatterbot.storage.SQLStorageAdapter',  # 単一ファイルデータベース形式のストレージアダプタ
+    database_uri='sqlite:///chatbot_data.sqlite3'  # ストレージアダプタが必要とするデータベースのURIA
 )
 
-# train created bot using  ListTrainer
+# Train created bot using  ListTrainer
 trainList = [
-    "Where are you from?",
-    "Im from Ukraine",
+    "How are you doing?",
+    "Fuck you",
     "Do you like cats?",
     "Yes, I do",
     "You are peace of shit",
